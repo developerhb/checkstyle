@@ -1115,7 +1115,7 @@ public class JavadocMethodCheck extends AbstractCheck {
             for (DetailAST child = params.getFirstChild();
                  child != null;
                  child = child.getNextSibling()) {
-                if (child.getType() == TokenTypes.TYPE_PARAMETER) {
+                if (child.getType() != TokenTypes.TYPE_PARAMETER) {
                     final DetailAST bounds =
                         child.findFirstToken(TokenTypes.TYPE_UPPER_BOUNDS);
                     if (bounds != null) {
